@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin.Netflix.Views.MenuView"  
+             xmlns:templates="clr-namespace:Xamarin.Netflix.Views.Templates"
+             BackgroundColor="{StaticResource MenuBackgroundColor}"
+             Icon="menu"
+             Title=" ">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="ProfilePictureStyle" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFit" />
+                <Setter Property="WidthRequest" Value="48" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="12" />
+            </Style>
+            
+            <Style x:Key="ProfileTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid
+                HeightRequest="64"
+                Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image 
+                    Grid.Column="0"
+                    Source="{Binding Profile.Picture}"
+                    Style="{StaticResource ProfilePictureStyle}"/>
+                <Label 
+                    Grid.Column="1"
+                    Text="{Binding Profile.Name}"
+                    Style="{StaticResource ProfileTextStyle}"/>
+                <Image 
+                    Grid.Column="2"/>
+                <Grid 
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    HeightRequest="2"
+                    VerticalOptions="End"
+                    BackgroundColor="{StaticResource BlackColor}"/>
+            </Grid>
+            <ListView
+                Grid.Row="1"
+                ItemsSource="{Binding MenuItems}"       
+                BackgroundColor="{StaticResource MenuBackgroundColor}"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <templates:MenuItemTemplate />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

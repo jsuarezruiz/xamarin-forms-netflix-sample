@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin.Netflix.Views.HomeView"  
+             xmlns:controls="clr-namespace:Xamarin.Netflix.Controls"    
+             xmlns:templates="clr-namespace:Xamarin.Netflix.Views.Templates"
+             BackgroundColor="{StaticResource BackgroundColor}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Margin" Value="12, 0" />
+            </Style>
+
+            <Style TargetType="controls:HorizontalList">
+                <Setter Property="Margin" Value="12, 0" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Icon="search"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label
+                    Text="Continue watching"
+                    Style="{StaticResource TitleStyle}">
+                    <Label.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="12, 0" />
+                            <On Platform="iOS" Value="12, 12, 12, 0" />
+                        </OnPlatform>
+                    </Label.Margin>
+                </Label>
+                <controls:HorizontalList   
+                    ListOrientation="Horizontal" 
+                    ItemsSource="{Binding Watching}"
+                    HeightRequest="200">
+                    <controls:HorizontalList.ItemTemplate>
+                        <DataTemplate>
+                            <templates:WatchingItemTemplate />
+                        </DataTemplate>
+                    </controls:HorizontalList.ItemTemplate>
+                </controls:HorizontalList>
+                <Label 
+                    Text="Movies" 
+                    Style="{StaticResource TitleStyle}"/>
+                <controls:HorizontalList 
+                    ListOrientation="Horizontal" 
+                    ItemsSource="{Binding Movies}"
+                    SelectedCommand="{Binding DetailCommand}"
+                    HeightRequest="160">
+                    <controls:HorizontalList.ItemTemplate>
+                        <DataTemplate>
+                            <templates:MovieItemTemplate />
+                        </DataTemplate>
+                    </controls:HorizontalList.ItemTemplate>
+                </controls:HorizontalList>
+                <Label 
+                    Text="Shows"
+                    Style="{StaticResource TitleStyle}"/>
+                <controls:HorizontalList         
+                    ListOrientation="Horizontal" 
+                    ItemsSource="{Binding TvShows}" 
+                    HeightRequest="160">
+                    <controls:HorizontalList.ItemTemplate>
+                        <DataTemplate>
+                            <templates:MovieItemTemplate />
+                        </DataTemplate>
+                    </controls:HorizontalList.ItemTemplate>
+                </controls:HorizontalList>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

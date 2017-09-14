@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin.Netflix.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!-- COLORS -->
+            <Color x:Key="BlackColor">#000000</Color>
+            <Color x:Key="BackgroundColor">#181818</Color>
+            <Color x:Key="MenuBackgroundColor">#272627</Color>
+            <Color x:Key="MenuTextColor">#B9B8B9</Color>
+            <Color x:Key="WhiteColor">#FFFFFF</Color>
+            
+            <!-- STYLES -->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource BlackColor}" />
+            </Style>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

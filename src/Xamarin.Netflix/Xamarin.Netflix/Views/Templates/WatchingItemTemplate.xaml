@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Xamarin.Netflix.Views.Templates.WatchingItemTemplate">
+    <ContentView.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="WatchingItemStyle" TargetType="Grid">
+                <Setter Property="WidthRequest" Value="350" />
+            </Style>
+            
+            <Style x:Key="CoverStyle" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFill" />
+            </Style>
+
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="VerticalOptions" Value="End" />
+                <Setter Property="Margin" Value="6, 12" />
+            </Style>
+
+            <Style x:Key="InformationStyle" TargetType="Image">
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="VerticalOptions" Value="End" />
+                <Setter Property="Margin" Value="0, 0, 12, 0" />
+            </Style>
+
+            <Style x:Key="PlayStyle" TargetType="Image">
+                <Setter Property="WidthRequest" Value="80" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="ProgressStyle" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="Red" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="End" />
+                <Setter Property="HeightRequest" Value="2" />
+                <Setter Property="WidthRequest" Value="80" />
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid
+            Style="{StaticResource WatchingItemStyle}">
+            <Image 
+                Source="{Binding Cover}"
+                Style="{StaticResource CoverStyle}"/>
+            <Image 
+                Source="coverbackground"
+                Style="{StaticResource CoverStyle}"/>
+            <Label 
+                Text="{Binding Title}"
+                Style="{StaticResource TitleStyle}"/>
+            <Image
+                Source="information"
+                Style="{StaticResource InformationStyle}"/>
+            <Image 
+                Source="play"
+                Style="{StaticResource PlayStyle}"/>
+            <Grid 
+                Style="{StaticResource ProgressStyle}"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

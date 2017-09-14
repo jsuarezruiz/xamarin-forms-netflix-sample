@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="0.094117647058823528" green="0.094117647058823528" blue="0.094117647058823528" alpha="1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="add.png" width="128" height="128"/>
+        <image name="bojack.jpg" width="350" height="525"/>
+        <image name="braveheart.jpg" width="350" height="466"/>
+        <image name="check.png" width="48" height="48"/>
+        <image name="conan.jpg" width="350" height="491"/>
+        <image name="coverbackground.png" width="600" height="338"/>
+        <image name="Default-568h.png" width="320" height="568"/>
+        <image name="Default-Portrait.png" width="768" height="1004"/>
+        <image name="Default.png" width="320" height="480"/>
+        <image name="defenders.jpg" width="600" height="338"/>
+        <image name="dots.png" width="48" height="48"/>
+        <image name="download.png" width="48" height="48"/>
+        <image name="edit.png" width="48" height="48"/>
+        <image name="familyguy.jpg" width="350" height="515"/>
+        <image name="Icon-60.png" width="60" height="60"/>
+        <image name="Icon-76.png" width="76" height="76"/>
+        <image name="Icon-Small-40.png" width="40" height="40"/>
+        <image name="Icon-Small.png" width="29" height="29"/>
+        <image name="icon.png" width="72" height="72"/>
+        <image name="indomable.jpg" width="350" height="480"/>
+        <image name="information.png" width="48" height="48"/>
+        <image name="list.png" width="48" height="48"/>
+        <image name="menu.png" width="48" height="48"/>
+        <image name="narcos.jpg" width="600" height="338"/>
+        <image name="netflix.png" width="256" height="144"/>
+        <image name="orphan.jpg" width="350" height="525"/>
+        <image name="ozark.jpg" width="350" height="525"/>
+        <image name="pianista.jpg" width="350" height="495"/>
+        <image name="pianistbackground.jpg" width="600" height="338"/>
+        <image name="play.png" width="128" height="128"/>
+        <image name="profile1.png" width="225" height="225"/>
+        <image name="profile2.png" width="225" height="225"/>
+        <image name="profile3.png" width="225" height="225"/>
+        <image name="profile4.png" width="225" height="225"/>
+        <image name="rate.png" width="48" height="48"/>
+        <image name="rocky.jpg" width="350" height="497"/>
+        <image name="search.png" width="48" height="48"/>
+        <image name="share.png" width="48" height="48"/>
+        <image name="splash_logo.png" width="256" height="144"/>
+        <image name="vidabella.jpg" width="350" height="514"/>
+    </resources>
+</document>

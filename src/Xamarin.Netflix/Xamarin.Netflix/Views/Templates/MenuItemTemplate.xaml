@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Xamarin.Netflix.Views.Templates.MenuItemTemplate">
+    <ContentView.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="MenuItemIconStyle" TargetType="Image">
+                <Setter Property="HeightRequest" Value="24" />
+                <Setter Property="WidthRequest" Value="24" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            
+            <Style x:Key="MenuItemTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource MenuTextColor}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid
+            HeightRequest="48">
+            <Grid.Triggers>
+                <DataTrigger
+                    TargetType="Grid"
+                    Binding="{Binding IsEnabled, Mode=TwoWay}"
+                    Value="False">
+                    <Setter Property="Opacity" Value="0.6" />
+                </DataTrigger>
+            </Grid.Triggers>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Image     
+                Grid.Row="0"
+                Grid.Column="1"
+                Source="{Binding Icon}"
+                Style="{StaticResource MenuItemIconStyle}"/>
+            <Label 
+                Grid.Row="0"
+                Grid.Column="2"
+                Text="{Binding Title}"
+                Style="{StaticResource MenuItemTextStyle}"/>
+            <Grid 
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                HeightRequest="2"
+                BackgroundColor="{StaticResource BlackColor}"
+                IsVisible="{Binding Separator}"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

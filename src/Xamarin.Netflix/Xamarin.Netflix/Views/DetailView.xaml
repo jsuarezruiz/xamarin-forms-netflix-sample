@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Xamarin.Netflix.Views.DetailView" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+    xmlns:templates="clr-namespace:Xamarin.Netflix.Views.Templates"
+    BackgroundColor="{StaticResource BackgroundColor}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="DetailTitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="Margin" Value="6, 0" />
+            </Style>
+
+            <Style x:Key="DetailDescriptionStyle" TargetType="Label" BasedOn="{StaticResource DetailTitleStyle}">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="Margin" Value="6, 0" />
+            </Style>
+
+            <Style x:Key="ActionButtonStyle" TargetType="Grid">
+                <Setter Property="Margin" Value="12" />
+            </Style>
+
+            <Style x:Key="ActionButtonImageStyle" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFit" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="ActionButtonTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="CoverBackgroundStyle" TargetType="Image">
+                <Setter Property="HeightRequest" Value="200" />
+                <Setter Property="Aspect" Value="AspectFill" />
+                <Setter Property="VerticalOptions" Value="End" />
+            </Style>
+
+            <Style x:Key="PlayStyle" TargetType="Image">
+                <Setter Property="WidthRequest" Value="80" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Color x:Key="DurationColor">#666566</Color>
+
+            <Style x:Key="DurationTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource DurationColor}" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="Margin" Value="6, 0" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Icon="share"/>
+        <ToolbarItem 
+            Icon="search"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <ContentView
+                x:Name="HeaderPanel"
+                BackgroundColor="{StaticResource BackgroundColor}"
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="FillAndExpand"
+                Margin="0,-75,0,0">
+                <ContentView.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android" Value="0,0,0,0" />
+                        <On Platform="iOS" Value="0,-75,0,0" />
+                    </OnPlatform>
+                </ContentView.Margin>
+                <ffimageloading:CachedImage 	
+                    Source="{Binding Movie.BackgroundImage}" 
+                    Aspect="AspectFill"
+                    HeightRequest="250"
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions="Start"
+					Opacity=".8">
+                    <ffimageloading:CachedImage.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android" Value="200" />
+                            <On Platform="iOS" Value="275" />
+                        </OnPlatform>
+                    </ffimageloading:CachedImage.HeightRequest>
+                </ffimageloading:CachedImage>
+            </ContentView>
+            <ScrollView
+                x:Name="ParallaxScroll" 
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="FillAndExpand">
+                <Grid
+				    RowSpacing="0"
+				    VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid
+                        Grid.Row="0">
+                        <Image 
+                            Source="coverbackground"
+                            Style="{StaticResource CoverBackgroundStyle}"/>
+                        <Image 
+                            Source="play"
+                            Style="{StaticResource PlayStyle}"/>
+                    </Grid>
+                    <Grid                    
+                        BackgroundColor="{StaticResource BackgroundColor}"
+					    Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label 
+                            Grid.Row="0"
+                            Text="{Binding Movie.Title}"
+                            Style="{StaticResource DetailTitleStyle}"/>
+                        <Grid
+                            Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label 
+                                Grid.Column="0"
+                                Text="{Binding Movie.Year}"
+                                Style="{StaticResource DurationTextStyle}"/>
+                            <Label 
+                                Grid.Column="1"
+                                Text="{Binding Movie.Duration}"
+                                HorizontalOptions="Start"
+                                Style="{StaticResource DurationTextStyle}"/>
+                        </Grid>
+                        <Label 
+                            Grid.Row="2"
+                            Text="{Binding Movie.Description}"
+                            Style="{StaticResource DetailDescriptionStyle}"/>
+                    </Grid>
+                    <Grid                    
+                        BackgroundColor="{StaticResource BackgroundColor}"
+                        Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid
+                            Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60" />
+                                <ColumnDefinition Width="60" />
+                            </Grid.ColumnDefinitions>
+                            <Grid
+                                Grid.Column="0"
+                                Style="{StaticResource ActionButtonStyle}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Image 
+                                    Grid.Row="0"
+                                    Source="list"
+                                    Style="{StaticResource ActionButtonImageStyle}"/>
+                                <Label 
+                                    Grid.Row="1"
+                                    Text="My list"
+                                    Style="{StaticResource ActionButtonTextStyle}"/>
+                            </Grid>
+                            <Grid
+                                Grid.Column="1"
+                                Style="{StaticResource ActionButtonStyle}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Image 
+                                    Grid.Row="0"
+                                    Source="rate"
+                                    Style="{StaticResource ActionButtonImageStyle}"/>
+                                <Label 
+                                    Grid.Row="1"
+                                    Text="Rate"
+                                    Style="{StaticResource ActionButtonTextStyle}"/>
+                            </Grid>
+                        </Grid>
+                        <StackLayout
+                            Grid.Row="1">
+                            <StackLayout
+                                Orientation="Horizontal">
+                                <Label 
+                                    Text="Similar to"
+                                    Style="{StaticResource DetailTitleStyle}"/>
+                                <Label 
+                                    Text="{Binding Movie.Title}" 
+                                    Style="{StaticResource DetailTitleStyle}"/>
+                            </StackLayout>
+                            <flv:FlowListView
+                                FlowItemsSource="{Binding SimilarMovies}"
+                                BackgroundColor="{StaticResource BackgroundColor}"
+                                FlowColumnCount="3" 
+                                FlowColumnExpand="First"
+                                SeparatorVisibility="None"
+                                HasUnevenRows="True"
+                                HeightRequest="350">
+                                <flv:FlowListView.FlowColumnTemplate>
+                                    <DataTemplate>
+                                        <templates:MovieItemTemplate />
+                                    </DataTemplate>
+                                </flv:FlowListView.FlowColumnTemplate>
+                            </flv:FlowListView>
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
