@@ -24,7 +24,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>i386, x86_64</MtouchArch>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
@@ -181,7 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Netflix\Xamarin.Netflix.csproj">
-      <Project>{7048da86-7011-4a31-87dd-6f96a6de5af3}</Project>
+      <Project>{5CE614DA-DBF8-4E30-8638-A00B5F2BB088}</Project>
       <Name>Xamarin.Netflix</Name>
     </ProjectReference>
   </ItemGroup>
