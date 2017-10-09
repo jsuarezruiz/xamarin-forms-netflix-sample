@@ -104,7 +104,7 @@
     <EmbeddedResource Include="80.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Beer Bottle Cap-48 %281%29.png">
+    <EmbeddedResource Include="512.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
