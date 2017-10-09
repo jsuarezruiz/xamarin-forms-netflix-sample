@@ -104,6 +104,9 @@
     <EmbeddedResource Include="80.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Beer Bottle Cap-48 %281%29.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DLToolkit.Forms.Controls.FlowListView, Version=1.0.6447.27582, Culture=neutral, processorArchitecture=MSIL">
@@ -149,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="HekpMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\LoginView.xaml">
