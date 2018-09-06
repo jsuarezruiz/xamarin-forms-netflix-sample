@@ -1,0 +1,79 @@
+{
+  "images": [
+    {
+      "scale": "1x",
+      "size": "29x29",
+      "idiom": "ipad"
+    },
+    {
+      "scale": "2x",
+      "size": "29x29",
+      "idiom": "ipad"
+    },
+    {
+      "scale": "1x",
+      "size": "40x40",
+      "idiom": "ipad"
+    },
+    {
+      "scale": "2x",
+      "size": "40x40",
+      "idiom": "ipad"
+    },
+    {
+      "scale": "1x",
+      "size": "76x76",
+      "idiom": "ipad"
+    },
+    {
+      "scale": "2x",
+      "size": "76x76",
+      "idiom": "ipad"
+    },
+    {
+      "scale": "2x",
+      "size": "83.5x83.5",
+      "idiom": "ipad"
+    },
+    {
+      "scale": "2x",
+      "size": "29x29",
+      "idiom": "iphone"
+    },
+    {
+      "scale": "3x",
+      "size": "29x29",
+      "idiom": "iphone"
+    },
+    {
+      "scale": "2x",
+      "size": "40x40",
+      "idiom": "iphone"
+    },
+    {
+      "scale": "3x",
+      "size": "40x40",
+      "idiom": "iphone",
+      "filename": "icon120x120.png"
+    },
+    {
+      "scale": "2x",
+      "size": "60x60",
+      "idiom": "iphone",
+      "filename": "icon120x120.png"
+    },
+    {
+      "scale": "3x",
+      "size": "60x60",
+      "idiom": "iphone",
+      "filename": "icon180x180.png"
+    }
+  ],
+  "properties": {
+    "pre-rendered": false
+  },
+  "info": {
+    "version": 1,
+    "author": ""
+  }
+}
