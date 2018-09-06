@@ -13,7 +13,7 @@ namespace Xamarin.Netflix.Droid
         Label = "Netflix",
         Icon = "@drawable/icon",
         Theme = "@style/MyTheme",
-        MainLauncher = true,
+        MainLauncher = false,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : Forms.Platform.Android.FormsAppCompatActivity
     {
