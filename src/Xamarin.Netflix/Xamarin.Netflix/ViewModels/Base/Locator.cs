@@ -1,4 +1,4 @@
-﻿using Microsoft.Practices.Unity;
+﻿using Autofac;
 using System;
 using Xamarin.Netflix.Services.Movies;
 using Xamarin.Netflix.Services.Navigation;
@@ -10,7 +10,8 @@ namespace Xamarin.Netflix.ViewModels.Base
 {
     public class Locator
     {
-        private readonly IUnityContainer _container;
+        private readonly IContainer _container;
+        private ContainerBuilder _builder;
 
         private static readonly Locator _instance = new Locator();
 
@@ -24,19 +25,21 @@ namespace Xamarin.Netflix.ViewModels.Base
 
         protected Locator()
         {
-            _container = new UnityContainer();
+            _builder = new ContainerBuilder();
 
-            _container.RegisterType<IMoviesService, MoviesService>();
-            _container.RegisterType<INavigationService, NavigationService>();
-            _container.RegisterType<IProfileService, ProfileService>();
-            _container.RegisterType<ITVShowsService, TVShowsService>();
-            _container.RegisterType<IWatchingService, WatchingService>();
+            _builder.RegisterType<MoviesService>().As<IMoviesService>();
+            _builder.RegisterType<NavigationService>().As<INavigationService>();
+            _builder.RegisterType<ProfileService>().As<IProfileService>();
+            _builder.RegisterType<TVShowsService>().As<ITVShowsService>();
+            _builder.RegisterType<WatchingService>().As<IWatchingService>();
 
-            _container.RegisterType<DetailViewModel>();
-            _container.RegisterType<LoginViewModel>();
-            _container.RegisterType<MenuViewModel>();
-            _container.RegisterType<MainViewModel>();
-            _container.RegisterType<HomeViewModel>();
+            _builder.RegisterType<DetailViewModel>();
+            _builder.RegisterType<LoginViewModel>();
+            _builder.RegisterType<MenuViewModel>();
+            _builder.RegisterType<MainViewModel>();
+            _builder.RegisterType<HomeViewModel>();
+
+            _container = _builder.Build();
         }
 
         public T Resolve<T>()
