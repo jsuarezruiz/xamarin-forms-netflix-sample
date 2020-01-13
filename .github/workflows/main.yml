@@ -12,7 +12,7 @@ jobs:
         cd src
         nuget restore
         cd Xamarin.Netflix/Xamarin.Netflix.Android
-        msbuild Blank.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
+        msbuild Xamarin.Netflix.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
         
   iOS:
     runs-on: macos-latest
