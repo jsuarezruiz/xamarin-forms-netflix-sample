@@ -1,4 +1,5 @@
-﻿using FFImageLoading.Forms.Touch;
+﻿using FFImageLoading.Forms.Platform;
+
 using Foundation;
 using UIKit;
 
