@@ -34,7 +34,11 @@ namespace Xamarin.Netflix.Droid
             // Remove the logo when we're not on the main page.
             MessagingService.Current.Subscribe<bool>(MessageKeys.ChangeToolbar, (page, showLogo) =>
             {
-                var logo = FindViewById<ImageView>(Resource.Id.logoImageLayout);
+                var view = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.customtoolbar);
+                if (view == null)
+                    return;
+
+                var logo = view.FindViewById<ImageView>(Resource.Id.logoImageLayout);
 
                 if (logo == null)
                     return;

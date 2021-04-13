@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/toolbar"
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/customtoolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/colorPrimary"
@@ -13,4 +13,4 @@
       android:layout_height="wrap_content"
       android:adjustViewBounds="true"
       android:src="@drawable/netflix" />
-</android.support.v7.widget.Toolbar>
+</androidx.appcompat.widget.Toolbar>
