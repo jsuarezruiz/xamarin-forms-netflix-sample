@@ -1,14 +1,17 @@
-﻿using System.Reflection;
-using Android.App;
+﻿using Android.App;
+using Android.Util;
 using Android.Views;
+
+using System.Reflection;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms.Platform.Android.AppCompat;
-using AToolbar = Android.Support.V7.Widget.Toolbar;
-using AView = Android.Views.View;
 using Xamarin.Netflix.Droid.Renderers;
-using Android.Util;
 using Xamarin.Netflix.Views;
+
+using AToolbar = AndroidX.AppCompat.Widget.Toolbar;
+using AView = Android.Views.View;
 
 [assembly: ExportRenderer(typeof(TranspatentNavigationPage), typeof(CustomNavigationBarRenderer))]
 namespace Xamarin.Netflix.Droid.Renderers

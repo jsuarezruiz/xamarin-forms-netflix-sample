@@ -3,8 +3,11 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using FFImageLoading.Forms.Droid;
+
+using FFImageLoading.Forms.Platform;
+
 using FormsToolkit;
+
 using Xamarin.Netflix.ViewModels.Base;
 
 namespace Xamarin.Netflix.Droid
@@ -24,7 +27,7 @@ namespace Xamarin.Netflix.Droid
 
             base.OnCreate(bundle);
 
-            CachedImageRenderer.Init();
+            CachedImageRenderer.Init(false);
             Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
 
@@ -32,6 +35,9 @@ namespace Xamarin.Netflix.Droid
             MessagingService.Current.Subscribe<bool>(MessageKeys.ChangeToolbar, (page, showLogo) =>
             {
                 var logo = FindViewById<ImageView>(Resource.Id.logoImageLayout);
+
+                if (logo == null)
+                    return;
 
                 if (showLogo)
                 {
